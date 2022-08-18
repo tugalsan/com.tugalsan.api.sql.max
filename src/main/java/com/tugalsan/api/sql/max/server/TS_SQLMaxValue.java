@@ -34,7 +34,7 @@ public class TS_SQLMaxValue {
             d.ci("date", "optionalValidator != null && !optionalValidator.validate(val)", optionalValidator.validate(val));
             return null;
         }
-        var date = TGS_Time.of(val, true);
+        var date = TGS_Time.ofDate(val);
         d.ci("date", () -> date.toString_dateOnly());
         return date;
     }
