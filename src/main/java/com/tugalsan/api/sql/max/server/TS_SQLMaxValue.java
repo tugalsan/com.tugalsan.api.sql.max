@@ -21,7 +21,7 @@ public class TS_SQLMaxValue {
         if (optionalValidator != null && !optionalValidator.validate(val)) {
             return null;
         }
-        return TGS_Time.of(val, false);
+        return TGS_Time.ofTime(val);
     }
 
     public TGS_Time date(TGS_ValidatorType1<Long> optionalValidator) {
