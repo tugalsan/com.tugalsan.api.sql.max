@@ -6,7 +6,7 @@ import com.tugalsan.api.validator.client.*;
 
 public class TS_SQLMaxValue {
 
-    final private static TS_Log d = TS_Log.of(TS_SQLMaxValue.class.getSimpleName());
+    final private static TS_Log d = TS_Log.of(TS_SQLMaxValue.class);
 
     public TS_SQLMaxValue(TS_SQLMaxExecutor executor) {
         this.executor = executor;

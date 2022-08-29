@@ -5,7 +5,7 @@ import com.tugalsan.api.sql.conn.server.*;
 
 public class TS_SQLMaxUtils {
 
-    final private static TS_Log d = TS_Log.of( TS_SQLMaxUtils.class.getSimpleName());
+    final private static TS_Log d = TS_Log.of(TS_SQLMaxUtils.class);
 
     public static TS_SQLMax max(TS_SQLConnAnchor anchor, CharSequence tableName, int colIdx) {
         var columnName = TS_SQLConnColUtils.names(anchor, tableName).get(colIdx);
