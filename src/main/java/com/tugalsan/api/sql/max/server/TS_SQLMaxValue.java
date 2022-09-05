@@ -51,7 +51,7 @@ public class TS_SQLMaxValue {
     }
 
     public long nextIdDated() {
-        var now = new TGS_Time();
+        var now = TGS_Time.of();
         var first = now.getYear() * 1000000L + now.getMonth() * 10000L + 1L;//YYYYMMSSSS
         var next = nextId();
         return next > first ? next : first;
