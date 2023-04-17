@@ -33,14 +33,14 @@ public class TS_SQLMaxExecutor {
         return sb.toString();
     }
 
-    public Long execute() {
+    public Long run() {
         TGS_Pack1<Long> pack = new TGS_Pack1();
         TS_SQLSelectStmtUtils.select(anchor, toString(), fillStmt -> {
             if (where != null) {
                 where.fill(fillStmt, 0);
             }
         }, rs -> {
-            d.ci("execute", () -> rs.meta.command());
+            d.ci("run", () -> rs.meta.command());
             if (rs.row.isEmpty()) {
                 return;
             }

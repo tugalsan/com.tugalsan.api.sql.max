@@ -2,9 +2,9 @@ module com.tugalsan.api.sql.max {
     requires java.sql;
     requires com.tugalsan.api.time;
     requires com.tugalsan.api.validator;
-    requires com.tugalsan.api.compiler;
+    requires com.tugalsan.api.callable;
     requires com.tugalsan.api.pack;
-    requires com.tugalsan.api.executable;
+    requires com.tugalsan.api.runnable;
     requires com.tugalsan.api.log;
     requires com.tugalsan.api.sql.sanitize;
     requires com.tugalsan.api.sql.select;

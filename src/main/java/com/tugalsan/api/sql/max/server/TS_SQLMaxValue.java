@@ -40,7 +40,7 @@ public class TS_SQLMaxValue {
     }
 
     public Long val() {
-        var val = executor.execute();
+        var val = executor.run();
         d.ci("val", val);
         return val;
     }
