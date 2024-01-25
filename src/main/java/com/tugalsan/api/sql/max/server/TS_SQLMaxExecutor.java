@@ -9,7 +9,7 @@ import com.tugalsan.api.sql.where.server.*;
 
 public class TS_SQLMaxExecutor {
 
-    private static TS_Log d = TS_Log.of(TS_SQLMaxExecutor.class);
+    private static final TS_Log d = TS_Log.of(TS_SQLMaxExecutor.class);
 
     public TS_SQLMaxExecutor(TS_SQLConnAnchor anchor, CharSequence tableName, CharSequence columnName) {
         this.anchor = anchor;

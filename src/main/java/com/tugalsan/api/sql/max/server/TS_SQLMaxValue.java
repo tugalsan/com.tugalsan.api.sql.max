@@ -51,17 +51,19 @@ public class TS_SQLMaxValue {
     }
 
     public long nextIdDated(boolean slim2000_defultTrue) {
-        return nextIdDated(true);
-    }
-
-    public long nextIdDated() {
         var now = TGS_Time.of();
         var year = now.getYear();
-        if (year >= 2000 && year <= 2999) {
-            year -= 2000;
+        if (slim2000_defultTrue) {
+            if (year >= 2000 && year <= 2999) {
+                year -= 2000;
+            }
         }
         var first = year * 1000000L + now.getMonth() * 10000L + 1L;//YYYYMMSSSS
         var next = nextId();
         return next > first ? next : first;
+    }
+
+    public long nextIdDated() {
+        return nextIdDated(true);
     }
 }
