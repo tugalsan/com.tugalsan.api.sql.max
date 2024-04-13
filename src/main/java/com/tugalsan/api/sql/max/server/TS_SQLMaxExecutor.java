@@ -1,11 +1,12 @@
 package com.tugalsan.api.sql.max.server;
 
 import com.tugalsan.api.log.server.*;
-import com.tugalsan.api.tuple.client.*;
 import com.tugalsan.api.sql.conn.server.*;
 import com.tugalsan.api.sql.sanitize.server.*;
 import com.tugalsan.api.sql.select.server.*;
 import com.tugalsan.api.sql.where.server.*;
+import com.tugalsan.api.union.client.TGS_UnionExcuse;
+import com.tugalsan.api.union.client.TGS_UnionExcuseVoid;
 
 public class TS_SQLMaxExecutor {
 
@@ -33,19 +34,37 @@ public class TS_SQLMaxExecutor {
         return sb.toString();
     }
 
-    public Long run() {
-        TGS_Tuple1<Long> pack = new TGS_Tuple1();
-        TS_SQLSelectStmtUtils.select(anchor, toString(), fillStmt -> {
+    public TGS_UnionExcuse<Long> run() {
+        var wrap = new Object() {
+            TGS_UnionExcuse<Integer> u_fill;
+            TGS_UnionExcuse<Boolean> u_isEmpty;
+            TGS_UnionExcuse<Long> u_rs_lng_get;
+            TGS_UnionExcuseVoid u_select;
+        };
+        wrap.u_select = TS_SQLSelectStmtUtils.select(anchor, toString(), fillStmt -> {
             if (where != null) {
-                where.fill(fillStmt, 0);
+                wrap.u_fill = where.fill(fillStmt, 0);
             }
         }, rs -> {
             d.ci("run", () -> rs.meta.command());
-            if (rs.row.isEmpty()) {
+            wrap.u_isEmpty = rs.row.isEmpty();
+            if (wrap.u_isEmpty.isExcuse() || wrap.u_isEmpty.value()) {
                 return;
             }
-            pack.value0 = rs.lng.get(0, 0);
+            wrap.u_rs_lng_get = rs.lng.get(0, 0);
         });
-        return pack.value0;
+        if (wrap.u_fill != null && wrap.u_fill.isExcuse()){
+            wrap.u_fill.toExcuse();
+        }
+        if (wrap.u_isEmpty != null && wrap.u_isEmpty.isExcuse()){
+            wrap.u_isEmpty.toExcuse();
+        }
+        if (wrap.u_rs_lng_get != null && wrap.u_rs_lng_get.isExcuse()){
+            wrap.u_rs_lng_get.toExcuse();
+        }
+        if (wrap.u_select != null && wrap.u_select.isExcuse()){
+            wrap.u_select.toExcuse();
+        }
+        return wrap.u_rs_lng_get;
     }
 }

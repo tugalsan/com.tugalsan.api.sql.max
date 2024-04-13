@@ -11,6 +11,11 @@
             <artifactId>com.tugalsan.api.sql.select</artifactId>
             <version>${project.version}</version>
         </dependency>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>com.tugalsan.api.sql.count</artifactId>
+            <version>${project.version}</version>
+        </dependency>
     </dependencies>
     
     <build>
