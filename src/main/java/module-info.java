@@ -1,7 +1,7 @@
 module com.tugalsan.api.sql.max {
     requires java.sql;
     requires com.tugalsan.api.time;
-    requires com.tugalsan.api.validator;
+    
     requires com.tugalsan.api.callable;
     requires com.tugalsan.api.tuple;
     

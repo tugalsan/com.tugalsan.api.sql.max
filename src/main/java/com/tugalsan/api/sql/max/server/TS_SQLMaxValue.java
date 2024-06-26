@@ -1,8 +1,8 @@
 package com.tugalsan.api.sql.max.server;
 
+import com.tugalsan.api.callable.client.TGS_CallableType1_Validate;
 import com.tugalsan.api.log.server.*;
 import com.tugalsan.api.time.client.*;
-import com.tugalsan.api.validator.client.*;
 
 public class TS_SQLMaxValue {
 
@@ -13,7 +13,7 @@ public class TS_SQLMaxValue {
     }
     final private TS_SQLMaxExecutor executor;
 
-    public TGS_Time time(TGS_ValidatorType1<Long> optionalValidator) {
+    public TGS_Time time(TGS_CallableType1_Validate<Long> optionalValidator) {
         var val = val();
         if (val == null) {
             return null;
@@ -24,7 +24,7 @@ public class TS_SQLMaxValue {
         return TGS_Time.ofTime(val);
     }
 
-    public TGS_Time date(TGS_ValidatorType1<Long> optionalValidator) {
+    public TGS_Time date(TGS_CallableType1_Validate<Long> optionalValidator) {
         var val = val();
         if (val == null) {
             d.ci("date", "val == null");
