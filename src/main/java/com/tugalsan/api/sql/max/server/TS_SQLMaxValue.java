@@ -1,6 +1,6 @@
 package com.tugalsan.api.sql.max.server;
 
-import com.tugalsan.api.function.client.TGS_Func_OutBool_In1;
+import com.tugalsan.api.function.client.maythrow.uncheckedexceptions.TGS_FuncMTUCE_OutBool_In1;
 import com.tugalsan.api.log.server.*;
 import com.tugalsan.api.time.client.*;
 
@@ -13,7 +13,7 @@ public class TS_SQLMaxValue {
     }
     final private TS_SQLMaxExecutor executor;
 
-    public TGS_Time time(TGS_Func_OutBool_In1<Long> optionalValidator) {
+    public TGS_Time time(TGS_FuncMTUCE_OutBool_In1<Long> optionalValidator) {
         var val = val();
         if (val == null) {
             return null;
@@ -24,7 +24,7 @@ public class TS_SQLMaxValue {
         return TGS_Time.ofTime(val);
     }
 
-    public TGS_Time date(TGS_Func_OutBool_In1<Long> optionalValidator) {
+    public TGS_Time date(TGS_FuncMTUCE_OutBool_In1<Long> optionalValidator) {
         var val = val();
         if (val == null) {
             d.ci("date", "val == null");
