@@ -50,11 +50,11 @@ public class TS_SQLMaxValue {
         return val == null ? 1L : val + 1L;
     }
 
-    public long nextIdDated(boolean slim2000_defultTrue) {
+    public long nextIdDated(boolean slimToZeroDateYear_defultTrue) {
         var now = TGS_Time.of();
         var year = now.getYear();
-        if (slim2000_defultTrue) {
-            if (year >= 2000 && year <= 2999) {
+        if (slimToZeroDateYear_defultTrue) {//IT CAN STAY, In 3000 ids will be longer
+            if (year >= 2000 && year < 2999) {
                 year -= 2000;
             }
         }
