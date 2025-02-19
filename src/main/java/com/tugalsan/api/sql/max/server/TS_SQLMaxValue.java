@@ -54,9 +54,7 @@ public class TS_SQLMaxValue {
         var now = TGS_Time.of();
         var year = now.getYear();
         if (slimToZeroDateYear_defultTrue) {//IT CAN STAY, In 3000 ids will be longer
-            if (year >= 2000 && year < 2999) {
-                year -= 2000;
-            }
+            year = TGS_TimeUtils.slimToZeroDateYear_OnlyIf2XXX(year);
         }
         var first = year * 1000000L + now.getMonth() * 10000L + 1L;//YYYYMMSSSS
         var next = nextId();
