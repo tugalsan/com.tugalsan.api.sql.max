@@ -26,7 +26,7 @@ public class TS_SQLMaxExecutor {
     public String toString() {
         TS_SQLSanitizeUtils.sanitize(columnName);
         TS_SQLSanitizeUtils.sanitize(tableName);
-        var sb = new StringBuilder().append("SELECT MAX(").append(columnName).append(") ").append(" FROM ").append(tableName);
+        var sb = new StringBuilder().append(anchor.tagSelectAndSpace()).append("MAX(").append(columnName).append(") ").append(" FROM ").append(tableName);
         if (where != null) {
             sb.append(" ").append(where);
         }
