@@ -1,8 +1,8 @@
 package com.tugalsan.api.sql.max.server;
 
-import com.tugalsan.api.function.client.maythrowexceptions.unchecked.TGS_FuncMTU_OutBool_In1;
-import com.tugalsan.api.log.server.*;
-import com.tugalsan.api.time.client.*;
+import module com.tugalsan.api.function;
+import module com.tugalsan.api.log;
+import module com.tugalsan.api.time;
 
 public class TS_SQLMaxValue {
 

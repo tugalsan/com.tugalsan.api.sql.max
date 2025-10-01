@@ -1,7 +1,7 @@
 package com.tugalsan.api.sql.max.server;
 
-import com.tugalsan.api.log.server.*;
-import com.tugalsan.api.sql.conn.server.*;
+import module com.tugalsan.api.log;
+import module com.tugalsan.api.sql.conn;
 
 public class TS_SQLMaxUtils {
 

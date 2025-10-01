@@ -1,11 +1,11 @@
 package com.tugalsan.api.sql.max.server;
 
-import com.tugalsan.api.log.server.*;
-import com.tugalsan.api.tuple.client.*;
-import com.tugalsan.api.sql.conn.server.*;
-import com.tugalsan.api.sql.sanitize.server.*;
-import com.tugalsan.api.sql.select.server.*;
-import com.tugalsan.api.sql.where.server.*;
+import module com.tugalsan.api.log;
+import module com.tugalsan.api.tuple;
+import module com.tugalsan.api.sql.conn;
+import module com.tugalsan.api.sql.sanitize;
+import module com.tugalsan.api.sql.select;
+import module com.tugalsan.api.sql.where;
 
 public class TS_SQLMaxExecutor {
 
