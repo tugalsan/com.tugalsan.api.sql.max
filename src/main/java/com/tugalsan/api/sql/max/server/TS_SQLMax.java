@@ -23,11 +23,11 @@ public class TS_SQLMax {
         return new TS_SQLMaxValue(executor);
     }
 
-    public TS_SQLMaxValue whereConditionAnd(TGS_FuncMTU_In1<TS_SQLWhereConditions> conditions) {
+    public TS_SQLMaxValue whereConditionAnd(TGS_FuncMTU_In1<TS_SQLWhereConditionsAnd> conditions) {
         return whereGroupAnd(where -> where.conditionsAnd(conditions));
     }
 
-    public TS_SQLMaxValue whereConditionOr(TGS_FuncMTU_In1<TS_SQLWhereConditions> conditions) {
+    public TS_SQLMaxValue whereConditionOr(TGS_FuncMTU_In1<TS_SQLWhereConditionsOr> conditions) {
         return whereGroupOr(where -> where.conditionsOr(conditions));
     }
 
